@@ -33,7 +33,7 @@ class WebShopController extends Controller
         try {
             //As there is no user for cart we can identify it with an unique key
             $data = ['product_id'=>$request->product_id,'cart_key'=>'DEFAULT_TEST_KEY'];
-            $product = Cart::find($request->product_id);
+            $product = Cart::where(['product_id'=>$request->product_id])->first();
             if(!empty($product)){
                 return [
                     'success' =>false,
