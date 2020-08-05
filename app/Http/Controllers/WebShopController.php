@@ -137,7 +137,7 @@ class WebShopController extends Controller
                 }
                 DB:: beginTransaction();
                 $response  =Order::create($data);
-                $cart  = Cart::whereIn('id', $cartProducts)->delete();
+                $cart  = Cart::whereIn('product_id', $cartProducts)->delete();
                 if(!$response || !$cart){
                     DB::rollBack();
                     return redirect()->back()->with(['error'=>'Something went wrong while placing order']);
