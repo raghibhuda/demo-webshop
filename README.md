@@ -18,7 +18,7 @@ As it doesn't have that much functionality so I made only one controller for tha
 It has several methods to handle these functionality. 
 
 
-#### Controllers
+#### Views
 - index
 - cart
 
